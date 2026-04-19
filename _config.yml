@@ -22,8 +22,8 @@ timezone: Asia/Shanghai
 # url：站点最终访问地址。本地预览可改回 http://localhost:4000
 # GitHub Pages 项目站默认：https://<用户>.github.io/<仓库名>/ → root 必须为 /仓库名/
 # 绑定自定义域名并在仓库 Pages 里保存后，改为 https://你的域名/ 且 root 设为 /
-url: https://jxzzlfh.github.io/hexo-blog
-root: /hexo-blog/
+url: https://jxzzlfh.cn
+root: /
 # permalink：文章 URL 规则。可按年/月/日 或 自定义路径。
 permalink: posts/:title.html
 permalink_defaults:
