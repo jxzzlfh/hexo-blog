@@ -18,13 +18,13 @@ nav:
   display_title: true
   display_post_title: true
   # 【是否固定顶栏】Whether to fix navigation bar
-  fixed: false
+  fixed: true
 
 menu:
-  # Home: / || fas fa-home
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+  文章: / || fas fa-home
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  归档: /archives/ || fas fa-archive
 
 # --------------------------------------
 # 【代码块】Code Blocks Settings
@@ -32,31 +32,30 @@ menu:
 
 code_blocks:
   # 【代码块配色】Code block theme: darker / pale night / light / ocean / false
-  theme: light
-  macStyle: false
+  theme: darker
+  macStyle: true
   # 【代码块最大高度】Code block height limit (unit: px)
-  height_limit: false
+  height_limit: 400
   word_wrap: false
 
   # 【工具栏：复制/语言等】Toolbar
   copy: true
   language: true
   # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
-  shrink: false
+  shrink: true
   fullpage: false
 
 # 【社交媒体链接】Social media links
 # 【格式说明】Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/jxzzlfh || Github || '#24292e'
 
 # --------------------------------------
 # 【图片 / 封面 / 背景】Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: https://resource-static.cdn.bcebos.com/img/favicon.png
 
 avatar:
   img: /img/butterfly-icon.png
@@ -66,13 +65,13 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+default_top_img: https://pic.lfh.ee/api
 
 # The banner image of index page
-index_img:
+index_img: https://pic.lfh.ee/api
 
 # The banner image of archive page
-archive_img:
+archive_img: https://pic.lfh.ee/api
 
 # Note: tag page, not tags page
 tag_img:
@@ -148,26 +147,23 @@ post_meta:
 # The position of site info, eg: 300px/300em/300rem/10%
 index_site_info_top:
 # The height of top_img, eg: 300px/300em/300rem
-index_top_img_height:
+# Set to 0 to hide the full-screen cover and go directly to articles
+index_top_img_height: 0
 
 # 【首页副标题 / 打字机】The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # 【打字机爆炸特效】Typewriter Effect
   effect: true
   # 【typed.js 参数】Customize typed.js
   # https://github.com/mattboldt/typed.js/#customization
   typed_option:
   # Source - Call the third-party service API (Chinese only)
-  # It will show the source first, then show the content of sub
   # Choose: false/1/2/3
-  # false - disable the function
-  # 1 - hitokoto.cn
-  # 2 - https://api.aa1.cn/doc/yiyan.html
-  # 3 - jinrishici.com
   source: false
-  # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 记录技术与生活，分享思考与实践
+    - AI 时代的个人知识管理
 
 # 【首页文章卡片布局】Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -245,15 +241,15 @@ post_pagination: 1
 
 # 【文章过期提示】Displays outdated notice for a post
 noticeOutdate:
-  enable: false
+  enable: true
   # Style: simple / flat
   style: flat
   # When will it be shown
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 本文已超过
+  message_next: 天未更新，内容可能已过时，请注意甄别。
 
 # --------------------------------------
 # 【页脚】Footer Settings
@@ -287,15 +283,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: 记录技术与生活，分享思考与实践
     button:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/jxzzlfh
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 欢迎来到我的博客 🎉
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -321,7 +317,7 @@ aside:
     enable: true
     # If set 0 will show all
     limit: 40
-    color: false
+    color: true
     custom_colors:
     # Order of tags, random/name/length
     orderby: random
@@ -396,7 +392,7 @@ darkmode:
   end:
 
 # Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
+rightside_scroll_percent: true
 
 # 【勿随意修改】Don't modify the following settings unless you know how they work
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
@@ -476,9 +472,8 @@ math:
 
 search:
   # Choose: algolia_search / local_search / docsearch
-  # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: 搜索文章...
 
   # 【Algolia 搜索】Algolia Search
   algolia_search:
@@ -488,7 +483,7 @@ search:
   # 【本地搜索】Local Search
   local_search:
     # Preload the search data when the page loads.
-    preload: false
+    preload: true
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # Unescape html strings to the readable one.
@@ -796,11 +791,11 @@ mask:
 
 # 【加载动画】Loading Animation
 preloader:
-  enable: false
+  enable: true
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
-  source: 1
+  source: 2
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
 
@@ -812,13 +807,13 @@ display_mode: light
 
 # 【标题美化为图标前缀】Configuration for beautifying the content of the article
 beautify:
-  enable: false
+  enable: true
   # Specify the field to beautify (site or post)
   field: post
   # Specify the icon to be used as a prefix for the title, such as '\f0c1'
-  title_prefix_icon:
+  title_prefix_icon: '\f0c1'
   # Specify the color of the title prefix icon, such as '#F47466'
-  title_prefix_icon_color:
+  title_prefix_icon_color: '#F47466'
 
 # 【全站字体】Global font settings
 # 【勿随意修改】Don't modify the following settings unless you know how they work
@@ -912,7 +907,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: medium_zoom
 
 # --------------------------------------
 # 【标签插件：Series/Mermaid 等】Tag Plugins settings
@@ -1001,7 +996,7 @@ aplayerInject:
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: bottom-left
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
@@ -1009,12 +1004,12 @@ snackbar:
 
 # 【Instant.page 预加载】Instant.page
 # https://instant.page/
-instantpage: false
+instantpage: true
 
 # 【图片懒加载】Lazyload
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   # Use browser's native lazyload instead of vanilla-lazyload
   native: false
   # Specify the field to use lazyload (site or post)
