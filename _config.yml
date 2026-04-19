@@ -6,13 +6,13 @@
 # -----------------------------------------------------------------------------
 # 站点信息（标题、语言、时区）
 # -----------------------------------------------------------------------------
-title: 我的博客
-subtitle: '记录技术与生活'
+title: Agent Skills 神技能
+subtitle: 'AI编程与创作'
 description: '一个基于 Hexo 的个人博客，记录技术思考与实践。'
 keywords:
   - 博客
   - 技术
-author: lifenghua
+author: 李丰华
 language: zh-CN
 timezone: Asia/Shanghai
 
