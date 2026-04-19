@@ -61,8 +61,8 @@ avatar:
   img: /img/lfh.jpg
   effect: false
 
-# Disable all banner images
-disable_top_img: true
+# Disable all banner images（false 才显示各页头图；首页高度单独由 index_top_img_height 控制）
+disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
 default_top_img: https://pic.lfh.ee/api
@@ -146,9 +146,9 @@ post_meta:
 # default: top img - full screen, site info - middle
 # The position of site info, eg: 300px/300em/300rem/10%
 index_site_info_top:
-# The height of top_img, eg: 300px/300em/300rem
-# Set to 0 to hide the full-screen cover and go directly to articles
-index_top_img_height: 0
+# The height of top_img, eg: 300px/300em/300rem/50vh
+# 仅首页：半屏头图；其余页面仍用主题默认全屏/默认高度
+index_top_img_height: 50vh
 
 # 【首页副标题 / 打字机】The subtitle on homepage
 subtitle:
