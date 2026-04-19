@@ -58,7 +58,7 @@ social:
 favicon: https://resource-static.cdn.bcebos.com/img/favicon.png
 
 avatar:
-  img: /img/lfh.jpg
+  img: /img/lfh.png
   effect: false
 
 # Disable all banner images（false 才显示各页头图；首页高度单独由 index_top_img_height 控制）
