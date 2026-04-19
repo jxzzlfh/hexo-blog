@@ -1,0 +1,123 @@
+# =============================================================================
+# Hexo 站点主配置（根目录）
+# 官方说明：https://hexo.io/zh-cn/docs/configuration
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 站点信息（标题、语言、时区）
+# -----------------------------------------------------------------------------
+title: 我的博客
+subtitle: '记录技术与生活'
+description: '一个基于 Hexo 的个人博客，记录技术思考与实践。'
+keywords:
+  - 博客
+  - 技术
+author: lifenghua
+language: zh-CN
+timezone: Asia/Shanghai
+
+# -----------------------------------------------------------------------------
+# 网址与永久链接
+# -----------------------------------------------------------------------------
+# url：站点最终访问地址。本地预览可改回 http://localhost:4000
+# GitHub Pages 项目站默认：https://<用户>.github.io/<仓库名>/ → root 必须为 /仓库名/
+# 绑定自定义域名并在仓库 Pages 里保存后，改为 https://你的域名/ 且 root 设为 /
+url: https://jxzzlfh.github.io/hexo-blog
+root: /hexo-blog/
+# permalink：文章 URL 规则。可按年/月/日 或 自定义路径。
+permalink: posts/:title.html
+permalink_defaults:
+pretty_urls:
+  # trailing_index：true 时链接带 index.html；false 可去掉尾部 index.html
+  trailing_index: true
+  # trailing_html：true 时链接带 .html；false 可去掉 .html 后缀（视服务器配置）
+  trailing_html: true
+
+# -----------------------------------------------------------------------------
+# 目录（一般保持默认）
+# -----------------------------------------------------------------------------
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# -----------------------------------------------------------------------------
+# 写作与渲染
+# -----------------------------------------------------------------------------
+# new_post_name：hexo new 生成文章的文件名模板
+new_post_name: :year-:month-:day-:title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+# post_asset_folder：true 时为每篇文章创建同名文件夹，便于放图片等资源
+post_asset_folder: true
+relative_link: false
+# future：true 允许发布「日期在未来」的文章（预览用）
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# -----------------------------------------------------------------------------
+# 首页文章列表（hexo-generator-index）
+# -----------------------------------------------------------------------------
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# -----------------------------------------------------------------------------
+# 分类与标签
+# -----------------------------------------------------------------------------
+default_category: uncategorized
+category_map:
+tag_map:
+
+meta_generator: true
+
+# -----------------------------------------------------------------------------
+# 日期时间格式（Moment.js 格式串）
+# -----------------------------------------------------------------------------
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+# updated_option：文章 updated 字段来源 — mtime 文件修改时间 / date 与 date 相同 / empty 空
+updated_option: 'mtime'
+
+# -----------------------------------------------------------------------------
+# 分页（全站默认；主题内可能再覆盖）
+# -----------------------------------------------------------------------------
+per_page: 10
+pagination_dir: page
+
+include:
+exclude:
+ignore:
+
+# -----------------------------------------------------------------------------
+# 主题：Butterfly（配置在根目录 _config.butterfly.yml，勿直接改 themes/butterfly/_config.yml）
+# 主题仓库：https://github.com/jerryc127/hexo-theme-butterfly
+# -----------------------------------------------------------------------------
+theme: butterfly
+
+# -----------------------------------------------------------------------------
+# 部署（需安装对应 deploy 插件，如 hexo-deployer-git）
+# -----------------------------------------------------------------------------
+deploy:
+  type: ''
